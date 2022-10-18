@@ -1,24 +1,58 @@
-import React from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const [input, setInput] = useState({
+    inputAdulto:'',
+    inputCrianca:''
+  });
+
+  const [carne, setCarne] = useState(0);
+  const [pao, setPao] = useState(0);
+  const [cerva, setCerva] = useState(0);
+  const [refri, setRefri] = useState(0);
+
+  function handleInput(event:ChangeEvent, key: string) {
+    //... values - spread, traz os valores q já existiam antes 
+    setInput(values => ({...values, [key]:(event.target as HTMLInputElement).value}));
+    
+  }
+
+  function funcaoCalcular() {
+    const carneAdulto = parseInt(input.inputAdulto) * 0.3;
+    const carneCrianca = parseInt(input.inputCrianca) * 0.1;
+    const paoAdulto = parseInt(input.inputAdulto) * 4;
+    const paoCrianca = parseInt(input.inputCrianca) * 1;
+    const cervaAdulto = parseInt(input.inputAdulto) * 2.5;
+    const refriCrianca = parseInt(input.inputCrianca) * 1;
+    const refriAdulto = parseInt(input.inputAdulto) * 0.5;
+
+    setRefri(refriCrianca + refriAdulto);
+    setCerva(cervaAdulto);
+    setPao(paoAdulto + paoCrianca);
+    setCarne(carneAdulto + carneCrianca);
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Churras do Yago</h2>
+
+        <label htmlFor="">Quantidade de Adultos:</label>
+        <input type="number" name="qtdAdulto" id="" onChange={(event) => handleInput(event, 'inputAdulto')} value = {input.inputAdulto}/>
+        <label htmlFor="">Quantidade de Crianças:</label>
+        <input type="number" name="qtdCrianca" id="" onChange={(event) => handleInput(event, 'inputCrianca')} value = {input.inputCrianca}/>
+        <button onClick={()=>funcaoCalcular()}>Calcular</button>
+
+      <hr />
+      <h2>Listar de compra:</h2>
+      <h3>Integrantes {input.inputAdulto} adultos e {input.inputCrianca} crianças</h3>
+      <p>Carne de Boi: {carne} kg</p>
+      <p>Pão de Alho: {pao} unidades</p>
+      <p>Cerva: {cerva} litros - Apenas maiores de 18 anos</p>
+      <p>Guaraná: {refri} litros</p>
     </div>
   );
 }
