@@ -39,12 +39,20 @@ function App() {
   return (
     <div className="App">
       <h2>Churras do Yago</h2>
+    <div className='row'>
+{/*       <img src="https://www.emporiotambo.com.br/pub/media/resized/1420x874/ves/blog/xchurrasco-para-10-pessoas.jpeg.pagespeed.ic.nIT_3JEmJE.jpg" alt="" />
+ */}      <div className='card'>
+      <label htmlFor="">Quantidade de Adultos:</label>
+      <input type="number" name="qtdAdulto" id="" onChange={(event) => handleInput(event, 'inputAdulto')} value = {input.inputAdulto}/>
+      </div>
 
-        <label htmlFor="">Quantidade de Adultos:</label>
-        <input type="number" name="qtdAdulto" id="" onChange={(event) => handleInput(event, 'inputAdulto')} value = {input.inputAdulto}/>
-        <label htmlFor="">Quantidade de Crianças:</label>
+      <div className='card'>
+      <label htmlFor="">Quantidade de Crianças:</label>
         <input type="number" name="qtdCrianca" id="" onChange={(event) => handleInput(event, 'inputCrianca')} value = {input.inputCrianca}/>
-        <button onClick={()=>funcaoCalcular()}>Calcular</button>
+      </div> 
+      </div>
+      <button onClick={()=>funcaoCalcular()}>Calcular</button>
+
 
       <hr />
       <h2>Listar de compra:</h2>
