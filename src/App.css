@@ -6,6 +6,8 @@ button{
   background-color: brown;
   border-radius: 10px;
   color: white;
+  width: 200px;
+  font-size: large;
 }
 .App-link {
   color: #61dafb;
@@ -13,16 +15,27 @@ button{
 
 .row{
   display: flex;
+  justify-content: center;
 }
 
 .card{
   border: 2px solid;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   margin-left: 2px;
   border-radius: 10px;
+  margin-bottom: 10px;
 }
 
+ img {
+  width: 300px;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.titulo {
+  color: brown;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

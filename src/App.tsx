@@ -38,15 +38,16 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Churras do Yago</h2>
+      <h2 className='titulo'>Churras do Yago</h2>
     <div className='row'>
-{/*       <img src="https://www.emporiotambo.com.br/pub/media/resized/1420x874/ves/blog/xchurrasco-para-10-pessoas.jpeg.pagespeed.ic.nIT_3JEmJE.jpg" alt="" />
- */}      <div className='card'>
+       <div className='card'>
+       <img src="https://www.emporiotambo.com.br/pub/media/resized/1420x874/ves/blog/xchurrasco-para-10-pessoas.jpeg.pagespeed.ic.nIT_3JEmJE.jpg" alt="" />
       <label htmlFor="">Quantidade de Adultos:</label>
       <input type="number" name="qtdAdulto" id="" onChange={(event) => handleInput(event, 'inputAdulto')} value = {input.inputAdulto}/>
       </div>
 
       <div className='card'>
+      <img src="https://images.freeimages.com/images/premium/previews/9907/9907607-girl-doing-the-barbecue.jpg" alt="" />
       <label htmlFor="">Quantidade de Crianças:</label>
         <input type="number" name="qtdCrianca" id="" onChange={(event) => handleInput(event, 'inputCrianca')} value = {input.inputCrianca}/>
       </div> 
